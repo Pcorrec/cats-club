@@ -34,6 +34,7 @@ Test Setup
     IF    $TEST_2_SETUP_VALUE is not None
         Run Keyword    ${TEST_2_SETUP}
     END
+    Open Browser    http://localhost:8080/index.html    firefox
 
 Test Teardown
     [Documentation]    test teardown
@@ -41,6 +42,7 @@ Test Teardown
     ...                You can define the ${TEST_2_TEARDOWN} variable with a keyword for tearing down this specific test.
     ...                If both are defined, ${TEST_TEARDOWN} will be run after ${TEST_2_TEARDOWN}.
 
+    Close Browser
     ${TEST_2_TEARDOWN_VALUE} =    Get Variable Value    ${TEST_2_TEARDOWN}
     ${TEST_TEARDOWN_VALUE} =      Get Variable Value    ${TEST_TEARDOWN}
     IF    $TEST_2_TEARDOWN_VALUE is not None
