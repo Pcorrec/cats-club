@@ -3,7 +3,7 @@ Documentation    Conformité de la page "Mon espace"
 Metadata         ID                           3
 Metadata         Automation priority          null
 Metadata         Test case importance         Low
-Resource         squash_resources.resource
+Resource         squash_MyPage.resource
 Test Setup       Test Setup
 Test Teardown    Test Teardown
 
@@ -11,6 +11,8 @@ Test Teardown    Test Teardown
 *** Test Cases ***
 Conformité de la page "Mon espace"
     [Documentation]    Conformité de la page "Mon espace"
+
+    Set Browser Implicit Wait  3 seconds
 
     Given Je suis connecté
     And Je suis sur la page Mon espace
