@@ -78,3 +78,6 @@ Je vois un champ Identifiant au-dessus d'un champ Mot de passe, chaque champ est
 En dessous des deux champs, il y a deux boutons côte à côte : Connexion et Mot de passe oublié
     Page Should Contain Button    id=connectionButton
     Page Should Contain Button    //input[@value="Mot de passe oublié"]
+
+Il existe une section Les chats des autres...
+    Page Should Contain Element    //h4[.="Les chats des autres..."]
