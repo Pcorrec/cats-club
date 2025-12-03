@@ -46,3 +46,6 @@ La section Ajouter un chat contient les champs Nom, Race, Date de naissance, Ima
 
 La section Mes chats contient une liste des noms des chats déjà créés
     Element Should Be Visible  //h4[@id='catLinks']//a
+
+Le message "Bienvenue dans le Cats Club !" est affiché
+    Page Should Contain Element    //h4[.="Bienvenue dans le Cats Club !"]
