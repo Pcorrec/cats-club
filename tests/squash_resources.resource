@@ -26,7 +26,7 @@ Je clique sur le bouton Galerie
 
 Il existe une liste déroulante labélisé "Maître" de propriétaire de chat
     Page Should Contain Element    //label[.="Maître"]
-    Page Should Contain List    id:ownerselect
+    Page Should Contain List    id:ownerSelect
 
 Je suis sur la page Mon espace
     Click Element  //nav//a[@href='space.html']
