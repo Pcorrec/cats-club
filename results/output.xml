@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20251203 13:59:55.799" rpa="false" schemaversion="3">
+<suite id="s1" name="Cats-Club" source="C:\Users\Formation\Desktop\test_robot_squash\cats-club">
+<suite id="s1-s1" name="Tests" source="C:\Users\Formation\Desktop\test_robot_squash\cats-club\tests">
+<suite id="s1-s1-s1" name="2 Liste des proprietaires" source="C:\Users\Formation\Desktop\test_robot_squash\cats-club\tests\2_Liste_des_proprietaires.robot">
+<test id="s1-s1-s1-t1" name="Liste des propriétaires" line="13">
+<kw name="Test Setup" type="SETUP">
+<doc>test setup
+You can define the ${TEST_SETUP} variable with a keyword for setting up all your tests.
+You can define the ${TEST_2_SETUP} variable with a keyword for setting up this specific test.
+If both are defined, ${TEST_2_SETUP} will be run after ${TEST_SETUP}.</doc>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${TEST_SETUP_VALUE}</var>
+<arg>${TEST_SETUP}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20251203 13:59:56.101" level="INFO">${TEST_SETUP_VALUE} = None</msg>
+<status status="PASS" starttime="20251203 13:59:56.100" endtime="20251203 13:59:56.102"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${TEST_2_SETUP_VALUE}</var>
+<arg>${TEST_2_SETUP}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20251203 13:59:56.104" level="INFO">${TEST_2_SETUP_VALUE} = None</msg>
+<status status="PASS" starttime="20251203 13:59:56.102" endtime="20251203 13:59:56.104"/>
+</kw>
+<if>
+<branch type="IF" condition="$TEST_SETUP_VALUE is not None">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${TEST_SETUP}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="NOT RUN" starttime="20251203 13:59:56.108" endtime="20251203 13:59:56.108"/>
+</kw>
+<status status="NOT RUN" starttime="20251203 13:59:56.107" endtime="20251203 13:59:56.108"/>
+</branch>
+<status status="PASS" starttime="20251203 13:59:56.104" endtime="20251203 13:59:56.108"/>
+</if>
+<if>
+<branch type="IF" condition="$TEST_2_SETUP_VALUE is not None">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${TEST_2_SETUP}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="NOT RUN" starttime="20251203 13:59:56.109" endtime="20251203 13:59:56.109"/>
+</kw>
+<status status="NOT RUN" starttime="20251203 13:59:56.109" endtime="20251203 13:59:56.109"/>
+</branch>
+<status status="PASS" starttime="20251203 13:59:56.108" endtime="20251203 13:59:56.109"/>
+</if>
+<status status="PASS" starttime="20251203 13:59:56.098" endtime="20251203 13:59:56.110"/>
+</kw>
+<kw name="And Je suis sur la page d'accueil" library="squash_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://localhost:8080/index.html</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20251203 13:59:56.113" level="INFO">Opening url 'http://localhost:8080/index.html'</msg>
+<msg timestamp="20251203 13:59:56.113" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20251203 13:59:56.114" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20251203 13:59:56.113" endtime="20251203 13:59:56.208"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//h4[.='Bienvenue dans le Cats Club !']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20251203 13:59:56.208" endtime="20251203 13:59:56.209"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//h4[.='Bienvenue dans le Cats Club !']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20251203 13:59:56.209" endtime="20251203 13:59:56.209"/>
+</kw>
+<status status="FAIL" starttime="20251203 13:59:56.110" endtime="20251203 13:59:56.209"/>
+</kw>
+<kw name="When Je clique sur le bouton Galerie" library="squash_resources">
+<status status="NOT RUN" starttime="20251203 13:59:56.211" endtime="20251203 13:59:56.213"/>
+</kw>
+<kw name="Then Il existe une liste déroulante labélisé &quot;Maître&quot; de propriétaire de chat" library="squash_resources">
+<status status="NOT RUN" starttime="20251203 13:59:56.215" endtime="20251203 13:59:56.216"/>
+</kw>
+<kw name="Test Teardown" type="TEARDOWN">
+<doc>test teardown
+You can define the ${TEST_TEARDOWN} variable with a keyword for tearing down all your tests.
+You can define the ${TEST_2_TEARDOWN} variable with a keyword for tearing down this specific test.
+If both are defined, ${TEST_TEARDOWN} will be run after ${TEST_2_TEARDOWN}.</doc>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${TEST_2_TEARDOWN_VALUE}</var>
+<arg>${TEST_2_TEARDOWN}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20251203 13:59:56.223" level="INFO">${TEST_2_TEARDOWN_VALUE} = None</msg>
+<status status="PASS" starttime="20251203 13:59:56.222" endtime="20251203 13:59:56.224"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${TEST_TEARDOWN_VALUE}</var>
+<arg>${TEST_TEARDOWN}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20251203 13:59:56.226" level="INFO">${TEST_TEARDOWN_VALUE} = None</msg>
+<status status="PASS" starttime="20251203 13:59:56.224" endtime="20251203 13:59:56.226"/>
+</kw>
+<if>
+<branch type="IF" condition="$TEST_2_TEARDOWN_VALUE is not None">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${TEST_2_TEARDOWN}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="NOT RUN" starttime="20251203 13:59:56.226" endtime="20251203 13:59:56.226"/>
+</kw>
+<status status="NOT RUN" starttime="20251203 13:59:56.226" endtime="20251203 13:59:56.226"/>
+</branch>
+<status status="PASS" starttime="20251203 13:59:56.226" endtime="20251203 13:59:56.226"/>
+</if>
+<if>
+<branch type="IF" condition="$TEST_TEARDOWN_VALUE is not None">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${TEST_TEARDOWN}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="NOT RUN" starttime="20251203 13:59:56.226" endtime="20251203 13:59:56.226"/>
+</kw>
+<status status="NOT RUN" starttime="20251203 13:59:56.226" endtime="20251203 13:59:56.226"/>
+</branch>
+<status status="PASS" starttime="20251203 13:59:56.226" endtime="20251203 13:59:56.226"/>
+</if>
+<status status="PASS" starttime="20251203 13:59:56.221" endtime="20251203 13:59:56.226"/>
+</kw>
+<doc>Liste des propriétaires</doc>
+<status status="FAIL" starttime="20251203 13:59:56.095" endtime="20251203 13:59:56.226">No browser is open.</status>
+</test>
+<doc>Liste des propriétaires</doc>
+<meta name="Automation priority">null</meta>
+<meta name="ID">2</meta>
+<meta name="Reference">GAL01</meta>
+<meta name="Test case importance">Low</meta>
+<status status="FAIL" starttime="20251203 13:59:55.841" endtime="20251203 13:59:56.226"/>
+</suite>
+<status status="FAIL" starttime="20251203 13:59:55.837" endtime="20251203 13:59:56.234"/>
+</suite>
+<status status="FAIL" starttime="20251203 13:59:55.806" endtime="20251203 13:59:56.237"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Cats-Club">Cats-Club</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">Cats-Club.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="2 Liste des proprietaires">Cats-Club.Tests.2 Liste des proprietaires</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

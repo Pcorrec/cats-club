@@ -1,6 +1,5 @@
 *** Settings ***
-
-Library  SeleniumLibrary
+Library    SeleniumLibrary
 
 *** Keywords ***
 
@@ -13,6 +12,20 @@ Je suis connecté
     Click Element  id:connectionButton
 
     Element Should Contain  id:navigation  Enrico Pallazzo
+
+Je suis sur la page d'accueil
+    Open Browser    http://localhost:8080/index.html    firefox
+    Go To    http://localhost:8080/index.html
+    Wait Until Page Contains Element    //h4[.='Bienvenue dans le Cats Club !']    
+    Page Should Contain Element    //h4[.='Bienvenue dans le Cats Club !']
+
+Je clique sur le bouton Galerie
+    Click Element    href:"gallery.html"
+    Wait Until Page Contains Element    //a[@href="gallery.html" and @class="nav-link active"]
+
+Il existe une liste déroulante labélisé "Maître" de propriétaire de chat
+    Page Should Contain Element    //label[.="Maître"]
+    Page Should Contain List    id:ownerselect
 
 Je suis sur la page Mon espace
     Click Element  //nav//a[@href='space.html']

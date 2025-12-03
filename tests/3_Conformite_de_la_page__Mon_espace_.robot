@@ -3,7 +3,7 @@ Documentation    Conformité de la page "Mon espace"
 Metadata         ID                           3
 Metadata         Automation priority          null
 Metadata         Test case importance         Low
-Resource         squash_MyPage.resource
+Resource         squash_resources.resource
 Test Setup       Test Setup
 Test Teardown    Test Teardown
 
