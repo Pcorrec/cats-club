@@ -43,6 +43,8 @@ Test Teardown
     ...                You can define the ${TEST_TEARDOWN} variable with a keyword for tearing down all your tests.
     ...                You can define the ${TEST_3_TEARDOWN} variable with a keyword for tearing down this specific test.
     ...                If both are defined, ${TEST_TEARDOWN} will be run after ${TEST_3_TEARDOWN}.
+    
+    Close Browser
 
     ${TEST_3_TEARDOWN_VALUE} =    Get Variable Value    ${TEST_3_TEARDOWN}
     ${TEST_TEARDOWN_VALUE} =      Get Variable Value    ${TEST_TEARDOWN}
@@ -52,4 +54,3 @@ Test Teardown
     IF    $TEST_TEARDOWN_VALUE is not None
         Run Keyword    ${TEST_TEARDOWN}
     END
-    Close Browser
