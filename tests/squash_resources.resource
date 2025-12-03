@@ -11,11 +11,12 @@ Je suis connecté
 
     Click Element  id:connectionButton
 
+    Sleep  1
+
     Element Should Contain  id:navigation  Enrico Pallazzo
 
 Je suis sur la page d'accueil
-    Open Browser    http://localhost:8080/index.html    firefox
-    Go To    http://localhost:8080/index.html
+    Click Element    //nav//a[@href='index.html']
     Wait Until Page Contains Element    //h4[.='Bienvenue dans le Cats Club !']    
     Page Should Contain Element    //h4[.='Bienvenue dans le Cats Club !']
 
@@ -46,6 +47,9 @@ La section Ajouter un chat contient les champs Nom, Race, Date de naissance, Ima
 
 La section Mes chats contient une liste des noms des chats déjà créés
     Element Should Be Visible  //h4[@id='catLinks']//a
+
+Le message "Bienvenue dans le Cats Club !" est affiché
+    Page Should Contain Element    //h4[.="Bienvenue dans le Cats Club !"]
 
 Je suis sur le site
     Open Browser    http://localhost:8080/index.html    firefox

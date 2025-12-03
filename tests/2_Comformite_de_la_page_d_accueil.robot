@@ -1,7 +1,6 @@
 *** Settings ***
-Documentation    Liste des propriétaires
+Documentation    Comformité de la page d'accueil
 Metadata         ID                           2
-Metadata         Reference                    GAL01
 Metadata         Automation priority          null
 Metadata         Test case importance         Low
 Resource         squash_resources.resource
@@ -10,13 +9,11 @@ Test Teardown    Test Teardown
 
 
 *** Test Cases ***
-Liste des propriétaires
-    [Documentation]    Liste des propriétaires
+Comformité de la page d'accueil
+    [Documentation]    Comformité de la page d'accueil
 
-    Given Je suis connecté
-    And Je suis sur la page d'accueil
-    When Je clique sur le bouton Galerie
-    Then Il existe une liste déroulante labélisé "Maître" de propriétaire de chat
+    Given Je suis sur la page d'accueil
+    Then Le message "Bienvenue dans le Cats Club !" est affiché
 
 
 *** Keywords ***
@@ -34,7 +31,6 @@ Test Setup
     IF    $TEST_2_SETUP_VALUE is not None
         Run Keyword    ${TEST_2_SETUP}
     END
-    Open Browser    http://localhost:8080/index.html    firefox
 
 Test Teardown
     [Documentation]    test teardown
@@ -42,7 +38,6 @@ Test Teardown
     ...                You can define the ${TEST_2_TEARDOWN} variable with a keyword for tearing down this specific test.
     ...                If both are defined, ${TEST_TEARDOWN} will be run after ${TEST_2_TEARDOWN}.
 
-    Close Browser
     ${TEST_2_TEARDOWN_VALUE} =    Get Variable Value    ${TEST_2_TEARDOWN}
     ${TEST_TEARDOWN_VALUE} =      Get Variable Value    ${TEST_TEARDOWN}
     IF    $TEST_2_TEARDOWN_VALUE is not None
