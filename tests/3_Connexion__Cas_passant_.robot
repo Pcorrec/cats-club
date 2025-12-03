@@ -1,24 +1,26 @@
 *** Settings ***
-Documentation    Conformité de la page "Mon espace"
+Documentation    Connexion (Cas passant)
 Metadata         ID                           3
 Metadata         Automation priority          null
 Metadata         Test case importance         Low
 Resource         squash_resources.resource
+Library          squash_tf.TFParamService
 Test Setup       Test Setup
 Test Teardown    Test Teardown
 
 
 *** Test Cases ***
-Conformité de la page "Mon espace"
-    [Documentation]    Conformité de la page "Mon espace"
+Connexion (Cas passant)
+    [Documentation]    Connexion (Cas passant)
 
-    Set Browser Implicit Wait  3 seconds
+    &{dataset} =    Retrieve Dataset
 
-    Given Je suis connecté
-    And Je suis sur la page Mon espace
-    Then Je vois les sections Ajouter un chat et Mes chats
-    And La section Ajouter un chat contient les champs Nom, Race, Date de naissance, Image et un bouton libellé Ajouter
-    And La section Mes chats contient une liste des noms des chats déjà créés
+    Given Je suis sur la page de connexion
+    When Je saisie "${dataset}[login]" dans le champ login
+    And Je saisie "${dataset}[motDePasse]" dans le champ mot de passe
+    And Je clique sur le bouton Connexion
+    Then Je suis connecté
+    And Je suis redirigé vers la page d'accueil
 
 
 *** Keywords ***
@@ -36,15 +38,12 @@ Test Setup
     IF    $TEST_3_SETUP_VALUE is not None
         Run Keyword    ${TEST_3_SETUP}
     END
-    Open Browser    http://localhost:8080/index.html    firefox
 
 Test Teardown
     [Documentation]    test teardown
     ...                You can define the ${TEST_TEARDOWN} variable with a keyword for tearing down all your tests.
     ...                You can define the ${TEST_3_TEARDOWN} variable with a keyword for tearing down this specific test.
     ...                If both are defined, ${TEST_TEARDOWN} will be run after ${TEST_3_TEARDOWN}.
-    
-    Close Browser
 
     ${TEST_3_TEARDOWN_VALUE} =    Get Variable Value    ${TEST_3_TEARDOWN}
     ${TEST_TEARDOWN_VALUE} =      Get Variable Value    ${TEST_TEARDOWN}
@@ -54,3 +53,24 @@ Test Teardown
     IF    $TEST_TEARDOWN_VALUE is not None
         Run Keyword    ${TEST_TEARDOWN}
     END
+
+Retrieve Dataset
+    [Documentation]    Retrieves Squash TM's datasets and stores them in a dictionary.
+    ...
+    ...                For instance, datasets containing 3 parameters "city", "country" and "currency"
+    ...                have been defined in Squash TM.
+    ...
+    ...                First, this keyword retrieves parameter values from Squash TM
+    ...                and stores them into variables, using the keyword 'Get Test Param':
+    ...                ${city} =    Get Test Param    DS_city
+    ...
+    ...                Then, this keyword stores the parameters into the &{dataset} dictionary
+    ...                with each parameter name as key, and each parameter value as value:
+    ...                &{dataset} =    Create Dictionary    city=${city}    country=${country}    currency=${currency}
+
+    ${login} =         Get Test Param    DS_login
+    ${motDePasse} =    Get Test Param    DS_motDePasse
+
+    &{dataset} =    Create Dictionary    login=${login}    motDePasse=${motDePasse}
+
+    RETURN    &{dataset}
