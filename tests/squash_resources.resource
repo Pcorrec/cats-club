@@ -53,11 +53,12 @@ Le message "Bienvenue dans le Cats Club !" est affiché
 
 Je suis sur le site
     Open Browser    http://localhost:8080/index.html    firefox
+    Maximize Browser Window
     Page Should Contain    Bienvenue dans le Cats Club !
 
 Je suis sur la page de connexion
     Click Element    //a[@href="connection.html"]
-    Page Should Contain Button    id=connectionButton
+    Wait Until Page Contains Element   id=connectionButton
 
 Je vois un champ Identifiant au-dessus d'un champ Mot de passe, chaque champ est précédé d'une icône
     # Identifiant #
