@@ -21,7 +21,7 @@ Je suis sur la page d'accueil
     Page Should Contain Element    //h4[.='Bienvenue dans le Cats Club !']
 
 Je clique sur le bouton Galerie
-    Click Element    href:"gallery.html"
+    Click Element    //nav//a[@href='gallery.html']
     Wait Until Page Contains Element    //a[@href="gallery.html" and @class="nav-link active"]
 
 Il existe une liste déroulante labélisé "Maître" de propriétaire de chat
