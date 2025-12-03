@@ -57,16 +57,16 @@ Je suis sur le site
 
 Je suis sur la page de connexion
     Click Element    //a[@href="connection.html"]
-    Page Should Contain Button    id="connectionButton"
+    Page Should Contain Button    id=connectionButton
 
 Je vois un champ Identifiant au-dessus d'un champ Mot de passe, chaque champ est précédé d'une icône
     # Identifiant #
     Page Should Contain    Identifiant
-    Page Should Contain Element    id="loginInput"
+    Page Should Contain Element    id=loginInput
 
     # Mot de passe #
     Page Should Contain    Mot de passe
-    Page Should Contain Element    id="passwordInput"
+    Page Should Contain Element    id=passwordInput
 
     # Logo Identifiant #
     Page Should Contain Element    //i[@class="fa fa-user text-light"]
@@ -75,5 +75,5 @@ Je vois un champ Identifiant au-dessus d'un champ Mot de passe, chaque champ est
     Page Should Contain Element    //i[@class="fa fa-lock text-light"]
 
 En dessous des deux champs, il y a deux boutons côte à côte : Connexion et Mot de passe oublié
-    Page Should Contain Button    id="connectionButton"
+    Page Should Contain Button    id=connectionButton
     Page Should Contain Button    //input[@value="Mot de passe oublié"]
