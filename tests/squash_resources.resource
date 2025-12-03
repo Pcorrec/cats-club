@@ -46,3 +46,30 @@ La section Ajouter un chat contient les champs Nom, Race, Date de naissance, Ima
 
 La section Mes chats contient une liste des noms des chats déjà créés
     Element Should Be Visible  //h4[@id='catLinks']//a
+
+Je suis sur le site
+    Open Browser    http://localhost:8080/index.html    firefox
+    Page Should Contain    Bienvenue dans le Cats Club !
+
+Je suis sur la page de connexion
+    Click Element    //a[@href="connection.html"]
+    Page Should Contain Button    id="connectionButton"
+
+Je vois un champ Identifiant au-dessus d'un champ Mot de passe, chaque champ est précédé d'une icône
+    # Identifiant #
+    Page Should Contain    Identifiant
+    Page Should Contain Element    id="loginInput"
+
+    # Mot de passe #
+    Page Should Contain    Mot de passe
+    Page Should Contain Element    id="passwordInput"
+
+    # Logo Identifiant #
+    Page Should Contain Element    //i[@class="fa fa-user text-light"]
+
+    # Logo Mot de passe #
+    Page Should Contain Element    //i[@class="fa fa-lock text-light"]
+
+En dessous des deux champs, il y a deux boutons côte à côte : Connexion et Mot de passe oublié
+    Page Should Contain Button    id="connectionButton"
+    Page Should Contain Button    //input[@value="Mot de passe oublié"]
