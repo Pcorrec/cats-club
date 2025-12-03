@@ -16,8 +16,7 @@ Je suis connecté
     Element Should Contain  id:navigation  Enrico Pallazzo
 
 Je suis sur la page d'accueil
-    Open Browser    http://localhost:8080/index.html    firefox
-    Go To    http://localhost:8080/index.html
+    Click Element    //nav//a[@href='index.html']
     Wait Until Page Contains Element    //h4[.='Bienvenue dans le Cats Club !']    
     Page Should Contain Element    //h4[.='Bienvenue dans le Cats Club !']
 
