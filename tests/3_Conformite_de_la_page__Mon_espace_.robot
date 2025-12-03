@@ -36,6 +36,7 @@ Test Setup
     IF    $TEST_3_SETUP_VALUE is not None
         Run Keyword    ${TEST_3_SETUP}
     END
+    Open Browser    http://localhost:8080/index.html    firefox
 
 Test Teardown
     [Documentation]    test teardown
@@ -51,3 +52,4 @@ Test Teardown
     IF    $TEST_TEARDOWN_VALUE is not None
         Run Keyword    ${TEST_TEARDOWN}
     END
+    Close Browser
