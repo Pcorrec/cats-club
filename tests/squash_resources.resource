@@ -11,6 +11,8 @@ Je suis connecté
 
     Click Element  id:connectionButton
 
+    Sleep  1
+
     Element Should Contain  id:navigation  Enrico Pallazzo
 
 Je suis sur la page d'accueil
